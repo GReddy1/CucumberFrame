@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import io.cucumber.java.en.But;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -28,14 +29,14 @@ public class StepD {
 		driver.get("http://leaftaps.com/opentaps/control/main");
 		
 	}
-	@Given("Enter the userName as DemosalesManager")
-	public void enter_the_user_name_as_demosales_manager() {
+	@Given("Enter the userName as {string}")
+	public void enter_the_user_name_as_demosales_manager(String user) {
 	
-		driver.findElement(By.id("username")).sendKeys("DemosalesManager");	
+		driver.findElement(By.id("username")).sendKeys(user);	
 	}
-	@Given("Enter the password as Crmsfa")
-	public void enter_the_password_as_crmsfa() {
-		driver.findElement(By.id("password")).sendKeys("crmsfa");
+	@Given("Enter the password as {string}")
+	public void enter_the_password_as_crmsfa(String pass) {
+		driver.findElement(By.id("password")).sendKeys(pass);
 	}
 		
 	@When("Click on the submit button")
@@ -56,7 +57,22 @@ public class StepD {
 		}
 	}
 	
-		
+	
+	
+	
+	@But("Error Massage should display")
+	public void errorMassage() {
+System.out.println("get Error Massage");
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		
 	}
 
